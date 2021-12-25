@@ -1,24 +1,12 @@
 <!DOCTYPE html>
 <html>
-	
-<head>
-	
-    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
-    <!-- we import arjs version without NFT but with marker + location based support -->
-    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
-    <script src=”https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
-    <script src="https://unpkg.com/aframe-pointcloud-component/dist/aframe-pointcloud-component.min.js"></script>
-                                                                                                       
-      <!-- nicht sicher, ob für audio benötigt  -->
-    <script src="js/aframe-environment-component.min.js"></script>   
 
-							
-							
-							
-                                              
-                                                 
-       <!-- Adapted from  https://github.com/stemkoski/A-Frame-Examples/blob/master/fade-in.html  -->                                              
-  
+<head>
+	<title>A-Frame: Environment component</title>
+	<meta name="description" content="A-Frame Examples">
+	<script src="js/aframe-master.1.0.4.min.js"></script>
+	<script src="js/aframe-environment-component.min.js"></script>
+
 <style>
 .mainUI
 {
@@ -52,17 +40,15 @@
 	filter: drop-shadow(0px 0px 20px white);
 }
 </style>
-</head>							
-							
- 
+</head>
+
 <body>
- 							
-							
+
 <div class="mainUI" id="uiDiv" oncontextmenu="return false;">
 	<!-- centered -->
 	<div class="regionUI">
 		<div class="buttonUI">
-    	<img src="/enter.png" id="buttonEnter" />
+    	<img src="images/buttons/enter.png" id="buttonEnter" />
 		</div>
 	</div>
 </div>
@@ -92,7 +78,7 @@ AFRAME.registerComponent('start', {
 			uiDiv.style["pointer-events"] = "none";
 
 			// sounds can only be triggered after a mouse interaction
-			let soundPlayer = document.querySelector("#mysound");
+			let soundPlayer = document.querySelector("#ambientSound");
 			soundPlayer.components.sound.playSound();
 
 			// remove startButton
@@ -110,91 +96,17 @@ AFRAME.registerComponent('start', {
 });
 </script>
 
-                                                                        
-                                                                        
-                                                 
-                                                 
-                                                 
-                                                 
-                                                 
-	<!-- Konflikt mit anderem Body????  -->						
-        <!-- <body style="margin : 0px; overflow: hidden;">  -->
-        
-                                                
-                                                                                  
-        <a-scene environment="preset: default;" start embedded vr-mode-ui="enabled: false;" arjs="sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;">
-               <!-- mit folgendem code werden Mini-Marker aktiviert: detectionMode: mono_and_matrix; matrixCodeType: 3x3   --> 
-               <!-- Wieder entfernt: mit folgendem code wird Kameraauflösung erhöht: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960;  -->                                                                                                                                   
-               <!-- für Button hinzugefügt:   environment="preset: default;" start    -->                                                                                                          
-                                                                    
-                                                                   
-           <a-assets>
-             <a-asset-item id="tree" src="/Weihnachtsbaum.glb"></a-asset-item>    
-                 <audio id="mysound" src="/iOS Sprachmemo - unkomprimiert.mp3" preload="auto"></audio>                                                              
-            <a-asset-item id="test-obj" src="/clapping-hands.obj"></a-asset-item> 
-            <a-asset-item id="test-mtl" src="/clapping-hands.mtl"></a-asset-item>                                                                     
-           </a-assets>         
 
-                                                                 
-      
-           <!--   Sound in Entity hat nicht geklappt, daher Sound als eigenes Objekt, unabhängig von Entities -->
-       <!--  klappt nicht: <a-sound src="/iOS Sprachmemo - unkomprimiert.mp3" autoplay="true"></a-sound>    -->                                         
-       <!--  klappt nicht: <a-sound src="/iOS Sprachmemo - unkomprimiert.mp3" autoplay="true" sound="loop: true; positional: false"></a-sound>  -->                                                                                              
-                                                                 
-                                                                 
-                                                                 
-          <!--   <a-marker preset="hiro">     -->
-          <!--   Mini-Marker sind durch Zeile 9/10 aktiviert       -->    
-                                        
-                                        
-                                        
-        <a-marker arjs-anchor="type:  barcode;  barcodeValue:  1;  smooth:  true;  smoothCount:  10;  smoothThreshold:  5">                                        
-            <a-box position='0 0.5 0' color="yellow"></a-box>
-        </a-marker>                      
-            
-                                     
-                                
-        <!--  klappt: weihnachtsbaum, dateien im absoluten grundverzeichnis von juederp -->                                                      
-          <a-marker arjs-anchor="type:  barcode;  barcodeValue:  2;  smooth:  true;  smoothCount:  10;  smoothThreshold:  5">
-            <a-entity                                       
-               position="0 0 0"
-               rotation="0 0 0"              
-               scale="0.003 0.003 0.003"     
-               gltf-model="#tree"
-                    sound="autoplay: true; loop: true; src: /iOS Sprachmemo - unkomprimiert.mp3"  
-             ></a-entity>
-          </a-marker>      
-                           
-                                   
-                                
-        <!--  klappt: weihnachtsbaum, dateien im absoluten grundverzeichnis von juederp -->                                                      
-          <a-marker arjs-anchor="type:  barcode;  barcodeValue:  3;  smooth:  true;  smoothCount:  10;  smoothThreshold:  5">
-            <a-entity                                       
-               position="0 0 0.5"
-               rotation="-90 0 0"              
-               scale="0.003 0.003 0.003"     
-               gltf-model="#tree"
-             ></a-entity>
-          </a-marker>      
-                                       
-                                                   
-        <a-marker arjs-anchor="type:  barcode;  barcodeValue:  4;  smooth:  true;  smoothCount:  10;  smoothThreshold:  5">
-          <a-entity                                       
-            position="2 0 0"
-            rotation="34.49205926687556 62.49537150389455 -67.05898034211155"              
-            scale="0.3 0.3 0.3"     
-            obj-model="obj: #test-obj ; mtl: #test-mtl"
-          ></a-entity>
-        </a-marker>                       
-                                               
-    
-                                 
-                                 
-                                                            
-        <!-- </a-marker>evice movemenents -->  
-        <!-- gehörte zu HIRO-Marker ; static camera that moves according to the device movemenents -->
-                                                            
-        <a-entity camera></a-entity>
-        </a-scene>
-    </body>
+<!-- https://github.com/supermedium/aframe-environment-component -->
+<a-scene environment="preset: default;" start>
+	  
+	<a-assets>
+    	<audio id="ambient" src="audio/ambient-wind.mp3" preload="auto"></audio>
+  	</a-assets>
+		
+	<a-entity id="ambientSound" sound="src: #ambient; loop: true;"></a-entity>
+
+</a-scene>
+
+</body>
 </html>
