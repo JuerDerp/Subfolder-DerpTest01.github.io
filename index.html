@@ -20,7 +20,7 @@
                                                                    
            <a-assets>
              <a-asset-item id="tree" src="/Weihnachtsbaum.glb"></a-asset-item>    
-              <!--  nicht nötig?:     <audio id="sound" src="/iOS Sprachmemo - unkomprimiert.mp3" preload="auto"></audio>    -->                                                              
+                 <audio id="sound" src="/iOS Sprachmemo - unkomprimiert.mp3" preload="auto"></audio>                                                              
             <a-asset-item id="test-obj" src="/clapping-hands.obj"></a-asset-item> 
             <a-asset-item id="test-mtl" src="/clapping-hands.mtl"></a-asset-item>                                                                     
            </a-assets>         
@@ -29,7 +29,7 @@
       
            <!--   Sound in Entity hat nicht geklappt, daher Sound als eigenes Objekt, unabhängig von Entities -->
        <!--  klappt nicht: <a-sound src="/iOS Sprachmemo - unkomprimiert.mp3" autoplay="true"></a-sound>    -->                                         
-       <a-sound src="/iOS Sprachmemo - unkomprimiert.mp3" autoplay="true" sound="loop: true; positional: false"></a-sound>                                                                                                
+       <!--  klappt nicht: <a-sound src="/iOS Sprachmemo - unkomprimiert.mp3" autoplay="true" sound="loop: true; positional: false"></a-sound>  -->                                                                                              
                                                                  
                                                                  
                                                                  
@@ -52,7 +52,8 @@
                scale="0.003 0.003 0.003"     
                gltf-model="#tree"
                    <!--  klappt nicht: sound="src: #sound"  -->
-                   <!--  klappt nicht: sound="autoplay: true; loop: true; src: #sound"   -->                   
+                   <!--  klappt nicht: sound="autoplay: true; loop: true; src: #sound"   -->      
+                    sound="src: #sound; on: click; loop: true"                                                                
              ></a-entity>
           </a-marker>      
                            
