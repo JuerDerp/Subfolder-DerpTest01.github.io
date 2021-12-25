@@ -48,7 +48,7 @@
 	<!-- centered -->
 	<div class="regionUI">
 		<div class="buttonUI">
-    	<img src="images/buttons/enter.png" id="buttonEnter" />
+    	<img src="/enter.png" id="buttonEnter" />
 		</div>
 	</div>
 </div>
@@ -78,7 +78,7 @@ AFRAME.registerComponent('start', {
 			uiDiv.style["pointer-events"] = "none";
 
 			// sounds can only be triggered after a mouse interaction
-			let soundPlayer = document.querySelector("#ambientSound");
+			let soundPlayer = document.querySelector("#mysound");
 			soundPlayer.components.sound.playSound();
 
 			// remove startButton
@@ -101,10 +101,10 @@ AFRAME.registerComponent('start', {
 <a-scene environment="preset: default;" start>
 	  
 	<a-assets>
-    	<audio id="ambient" src="audio/ambient-wind.mp3" preload="auto"></audio>
-  	</a-assets>
+    	 <audio id="mysound" src="/iOS Sprachmemo - unkomprimiert.mp3" preload="auto"></audio>  
+	</a-assets>
 		
-	<a-entity id="ambientSound" sound="src: #ambient; loop: true;"></a-entity>
+	<a-entity id="mysound" sound="src: #ambient; loop: true;"></a-entity>
 
 </a-scene>
 
