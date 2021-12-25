@@ -12,6 +12,9 @@
       <!-- nicht sicher, ob für audio benötigt  -->
     <script src="js/aframe-environment-component.min.js"></script>   
 
+							
+							
+							
                                               
                                                  
        <!-- Adapted from  https://github.com/stemkoski/A-Frame-Examples/blob/master/fade-in.html  -->                                              
@@ -118,12 +121,11 @@ AFRAME.registerComponent('start', {
         <!-- <body style="margin : 0px; overflow: hidden;">  -->
         
                                                 
-                                                 
-                                                 
-        <a-scene embedded vr-mode-ui="enabled: false;" arjs="sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;">
+                                                                                  
+        <a-scene environment="preset: default;" start embedded vr-mode-ui="enabled: false;" arjs="sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;">
                <!-- mit folgendem code werden Mini-Marker aktiviert: detectionMode: mono_and_matrix; matrixCodeType: 3x3   --> 
                <!-- Wieder entfernt: mit folgendem code wird Kameraauflösung erhöht: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960;  -->                                                                                                                                   
-                                                                                                                           
+               <!-- für Button hinzugefügt:   environment="preset: default;" start    -->                                                                                                          
                                                                     
                                                                    
            <a-assets>
