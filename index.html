@@ -24,19 +24,24 @@
             <a-asset-item id="test-obj" src="/clapping-hands.obj"></a-asset-item> 
             <a-asset-item id="test-mtl" src="/clapping-hands.mtl"></a-asset-item>                                                                     
            </a-assets>         
-                                                                
+
+                                                                 
+      
+           <!--   Sound in Entity hat nicht geklappt, daher Sound als eigenes Objekt, unabhängig von Entities -->
+       <a-sound src="/iOS Sprachmemo - unkomprimiert.mp3" autoplay="true"></a-sound>                                            
+                                                                                                   
+                                                                 
+                                                                 
+                                                                 
           <!--   <a-marker preset="hiro">     -->
-          <!--   Mini-Marker sind durch Zeile 9/10 aktiviert       -->                        
-                                          
+          <!--   Mini-Marker sind durch Zeile 9/10 aktiviert       -->    
                                         
                                         
                                         
-                                       
         <a-marker arjs-anchor="type:  barcode;  barcodeValue:  1;  smooth:  true;  smoothCount:  10;  smoothThreshold:  5">                                        
             <a-box position='0 0.5 0' color="yellow"></a-box>
         </a-marker>                      
-
-                                                    
+            
                                      
                                 
         <!--  klappt: weihnachtsbaum, dateien im absoluten grundverzeichnis von juederp -->                                                      
@@ -47,7 +52,7 @@
                scale="0.003 0.003 0.003"     
                gltf-model="#tree"
                    <!--  klappt nicht: sound="src: #sound"  -->
-                   sound="autoplay: true; loop: true; src: #sound"                   
+                   <!--  klappt nicht: sound="autoplay: true; loop: true; src: #sound"   -->                   
              ></a-entity>
           </a-marker>      
                            
