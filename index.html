@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html>
+	
+<head>
+	
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
     <!-- we import arjs version without NFT but with marker + location based support -->
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
@@ -8,13 +11,50 @@
                                                                                                        
       <!-- nicht sicher, ob für audio benötigt  -->
     <script src="js/aframe-environment-component.min.js"></script>   
-                                                        
-    <body style="margin : 0px; overflow: hidden;">
-        
-                                                 
+
+                                              
                                                  
        <!-- Adapted from  https://github.com/stemkoski/A-Frame-Examples/blob/master/fade-in.html  -->                                              
-   
+  
+<style>
+.mainUI
+{
+	border: 0px solid pink; 
+	position: fixed; 
+	top: 0px;  
+	width:100%; height:100%; 
+	z-index: 1; 
+	pointer-events: none; /* allow click-through in transparent areas */
+	display: flex;
+	align-items: center;
+  	justify-content: center;
+}
+
+.regionUI
+{
+	border: 0px solid yellow;
+	position: absolute; 
+	display: flex;
+	flex-direction: row;
+	pointer-events: none;
+}
+
+.buttonUI
+{
+	border: 0px solid lime;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	pointer-events: auto;	
+	filter: drop-shadow(0px 0px 20px white);
+}
+</style>
+</head>							
+							
+ 
+<body>
+ 							
+							
 <div class="mainUI" id="uiDiv" oncontextmenu="return false;">
 	<!-- centered -->
 	<div class="regionUI">
@@ -74,7 +114,10 @@ AFRAME.registerComponent('start', {
                                                  
                                                  
                                                  
-                                                 
+	<!-- Konflikt mit anderem Body????  -->						
+        <!-- <body style="margin : 0px; overflow: hidden;">  -->
+        
+                                                
                                                  
                                                  
         <a-scene embedded vr-mode-ui="enabled: false;" arjs="sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;">
