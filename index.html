@@ -36,20 +36,10 @@
         </a-marker>                      
 
                                                     
-                                                    
-        <a-marker arjs-anchor="type:  barcode;  barcodeValue:  2;  smooth:  true;  smoothCount:  10;  smoothThreshold:  5">
-          <a-entity                                       
-            position="2 0 0"
-            rotation="34.49205926687556 62.49537150389455 -67.05898034211155"              
-            scale="0.3 0.3 0.3"     
-            obj-model="obj: #test-obj ; mtl: #test-mtl"
-          ></a-entity>
-        </a-marker>                       
-                                               
-                                  
+                                     
                                 
-        <!--  klappt nicht: weihnachtsbaum, dateien im grundverzeichnis -->                                                      
-          <a-marker arjs-anchor="type:  barcode;  barcodeValue:  3;  smooth:  true;  smoothCount:  10;  smoothThreshold:  5">
+        <!--  klappt: weihnachtsbaum, dateien im absoluten grundverzeichnis von juederp -->                                                      
+          <a-marker arjs-anchor="type:  barcode;  barcodeValue:  2;  smooth:  true;  smoothCount:  10;  smoothThreshold:  5">
             <a-entity                                       
                position="0 0 0"
                rotation="0 0 0"              
@@ -58,8 +48,31 @@
              ></a-entity>
           </a-marker>      
                            
-                              
-                              
+                                   
+                                
+        <!--  klappt: weihnachtsbaum, dateien im absoluten grundverzeichnis von juederp -->                                                      
+          <a-marker arjs-anchor="type:  barcode;  barcodeValue:  3;  smooth:  true;  smoothCount:  10;  smoothThreshold:  5">
+            <a-entity                                       
+               position="0 0 0.5"
+               rotation="-90 0 0"              
+               scale="0.003 0.003 0.003"     
+               gltf-model="#tree"
+             ></a-entity>
+          </a-marker>      
+                                       
+                                                   
+        <a-marker arjs-anchor="type:  barcode;  barcodeValue:  4;  smooth:  true;  smoothCount:  10;  smoothThreshold:  5">
+          <a-entity                                       
+            position="2 0 0"
+            rotation="34.49205926687556 62.49537150389455 -67.05898034211155"              
+            scale="0.3 0.3 0.3"     
+            obj-model="obj: #test-obj ; mtl: #test-mtl"
+          ></a-entity>
+        </a-marker>                       
+                                               
+    
+                                 
+                                 
                                                             
         <!-- </a-marker>evice movemenents -->  
         <!-- gehörte zu HIRO-Marker ; static camera that moves according to the device movemenents -->
